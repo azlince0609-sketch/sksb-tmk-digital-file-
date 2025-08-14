@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fail Digital Penyelaras Modul TMK - SK Siburan Batu</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fail Digital Penyelaras Modul TMK - SK Siburan Batu</title>
+<link href="style.css" rel="stylesheet"/>
     #toggle-tukar-mod {
   display: none;
 }
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg { 
@@ -131,271 +132,223 @@
             right: 10%;
             animation-delay: -10s;
         }
-    </style>
+    
+button[onclick='toggleRole()'] { display: none !important; }
+</style>
 </head>
 <body class="bg-gray-50 min-h-screen">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg bg-pattern">
-        <div class="floating-shapes"></div>
-        <div class="container mx-auto px-6 py-4 relative z-10">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <!-- School Logo -->
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg p-1 relative group cursor-pointer animate-pulse-slow" onclick="openLogoModal()">
-                        <img src="logo.png" alt="LOGO SEKOLAH" style="height:60px;">
-                        <div id="defaultLogo" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="editor-only absolute -bottom-1 -right-1 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+<!-- Header -->
+<header class="gradient-bg text-white shadow-lg bg-pattern">
+<div class="floating-shapes"></div>
+<div class="container mx-auto px-6 py-4 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<!-- School Logo -->
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg p-1 relative group cursor-pointer animate-pulse-slow">
+<img alt="LOGO SEKOLAH" src="logo.png" style="height:60px;"/>
+
+<div class="editor-only absolute -bottom-1 -right-1 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                             ✏️
                         </div>
-                    </div>
-                    <div class="animate-slide-left">
-                        <h1 class="text-3xl font-bold text-white drop-shadow-lg mb-1">SK SIBURAN BATU</h1>
-                        <p class="text-lg font-semibold text-yellow-200 animate-fade-in drop-shadow-md">Fail Digital Penyelaras Modul TMK</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4 animate-slide-right">
-                    <div class="glass-effect px-4 py-2 rounded-lg">
-                        <span class="text-sm font-medium" id="userRole">Editor</span>
-                    </div>
-                    <button onclick="shareViewerLink()" class="editor-only bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+</div>
+<div class="animate-slide-left">
+<h1 class="text-3xl font-bold text-white drop-shadow-lg mb-1">SK SIBURAN BATU</h1>
+<p class="text-lg font-semibold text-yellow-200 animate-fade-in drop-shadow-md">Fail Digital Penyelaras Modul TMK</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 animate-slide-right">
+<div class="glass-effect px-4 py-2 rounded-lg">
+<span class="text-sm font-medium" id="userRole">Editor</span>
+</div>
+<button class="editor-only bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="shareViewerLink()">
                         📤 Kongsi Link
                     </button>
-                    <button onclick="toggleRole()" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+<button class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="toggleRole()">
                         Tukar Mod
                     </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8">
-        <!-- Welcome Section -->
-        <div class="bg-gradient-to-r from-white to-blue-50 rounded-xl shadow-lg p-6 mb-8 animate-fade-in border border-blue-100">
-            <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse-slow">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang ke Sistem Pengurusan Fail Digital</h2>
-                    <p class="text-gray-600">Platform pengurusan bahan dan dokumen untuk Modul Teknologi Maklumat dan Komunikasi (TMK)</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Categories Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Surat-Menyurat -->
-            <div class="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg card-hover border border-blue-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Surat-Menyurat</h3>
-                    <p class="text-gray-600 mb-4">Koleksi surat rasmi dan komunikasi berkaitan TMK</p>
-                    <div class="space-y-2" id="surat-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('surat')" class="editor-only mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full">
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="container mx-auto px-6 py-8">
+<!-- Welcome Section -->
+<div class="bg-gradient-to-r from-white to-blue-50 rounded-xl shadow-lg p-6 mb-8 animate-fade-in border border-blue-100">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse-slow">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h2 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang ke Sistem Pengurusan Fail Digital</h2>
+<p class="text-gray-600">Platform pengurusan bahan dan dokumen untuk Modul Teknologi Maklumat dan Komunikasi (TMK)</p>
+</div>
+</div>
+</div>
+<!-- Categories Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Surat-Menyurat -->
+<div class="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg card-hover border border-blue-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Surat-Menyurat</h3>
+<p class="text-gray-600 mb-4">Koleksi surat rasmi dan komunikasi berkaitan TMK</p>
+<div class="space-y-2" id="surat-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors w-full" onclick="openAddModal('surat')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-
-            <!-- Dasar Pendidikan Digital -->
-            <div class="bg-gradient-to-br from-white to-green-50 rounded-xl shadow-lg card-hover border border-green-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Dasar Pendidikan Digital</h3>
-                    <p class="text-gray-600 mb-4">Dokumen dasar dan garis panduan pendidikan digital</p>
-                    <div class="space-y-2" id="dasar-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('dasar')" class="editor-only mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors w-full">
+</div>
+</div>
+<!-- Dasar Pendidikan Digital -->
+<div class="bg-gradient-to-br from-white to-green-50 rounded-xl shadow-lg card-hover border border-green-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Dasar Pendidikan Digital</h3>
+<p class="text-gray-600 mb-4">Dokumen dasar dan garis panduan pendidikan digital</p>
+<div class="space-y-2" id="dasar-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors w-full" onclick="openAddModal('dasar')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-
-            <!-- Buku Panduan Pelaksanaan -->
-            <div class="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg card-hover border border-purple-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Buku Panduan Pelaksanaan</h3>
-                    <p class="text-gray-600 mb-4">Panduan lengkap pelaksanaan Modul TMK</p>
-                    <div class="space-y-2" id="panduan-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('panduan')" class="editor-only mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full">
+</div>
+</div>
+<!-- Buku Panduan Pelaksanaan -->
+<div class="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg card-hover border border-purple-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Buku Panduan Pelaksanaan</h3>
+<p class="text-gray-600 mb-4">Panduan lengkap pelaksanaan Modul TMK</p>
+<div class="space-y-2" id="panduan-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors w-full" onclick="openAddModal('panduan')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-
-            <!-- Modul TMK Tahap 1 -->
-            <div class="bg-gradient-to-br from-white to-orange-50 rounded-xl shadow-lg card-hover border border-orange-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Modul TMK Tahap 1</h3>
-                    <p class="text-gray-600 mb-4">Bahan pembelajaran TMK untuk tahap permulaan</p>
-                    <div class="space-y-2" id="tahap1-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('tahap1')" class="editor-only mt-4 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors w-full">
+</div>
+</div>
+<!-- Modul TMK Tahap 1 -->
+<div class="bg-gradient-to-br from-white to-orange-50 rounded-xl shadow-lg card-hover border border-orange-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Modul TMK Tahap 1</h3>
+<p class="text-gray-600 mb-4">Bahan pembelajaran TMK untuk tahap permulaan</p>
+<div class="space-y-2" id="tahap1-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors w-full" onclick="openAddModal('tahap1')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-
-            <!-- Modul TMK Tahap 2 -->
-            <div class="bg-gradient-to-br from-white to-red-50 rounded-xl shadow-lg card-hover border border-red-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Modul TMK Tahap 2</h3>
-                    <p class="text-gray-600 mb-4">Bahan pembelajaran TMK untuk tahap lanjutan</p>
-                    <div class="space-y-2" id="tahap2-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('tahap2')" class="editor-only mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors w-full">
+</div>
+</div>
+<!-- Modul TMK Tahap 2 -->
+<div class="bg-gradient-to-br from-white to-red-50 rounded-xl shadow-lg card-hover border border-red-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Modul TMK Tahap 2</h3>
+<p class="text-gray-600 mb-4">Bahan pembelajaran TMK untuk tahap lanjutan</p>
+<div class="space-y-2" id="tahap2-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors w-full" onclick="openAddModal('tahap2')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-
-            <!-- Aktiviti Pelaksanaan -->
-            <div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl shadow-lg card-hover border border-indigo-100">
-                <div class="p-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Aktiviti Pelaksanaan</h3>
-                    <p class="text-gray-600 mb-4">Aktiviti dan projek pelaksanaan Modul TMK</p>
-                    <div class="space-y-2" id="aktiviti-links">
-                        <p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
-                    </div>
-                    <button onclick="openAddModal('aktiviti')" class="editor-only mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors w-full">
+</div>
+</div>
+<!-- Aktiviti Pelaksanaan -->
+<div class="bg-gradient-to-br from-white to-indigo-50 rounded-xl shadow-lg card-hover border border-indigo-100">
+<div class="p-6">
+<div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4 icon-bounce shadow-lg">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Aktiviti Pelaksanaan</h3>
+<p class="text-gray-600 mb-4">Aktiviti dan projek pelaksanaan Modul TMK</p>
+<div class="space-y-2" id="aktiviti-links">
+<p class="text-sm text-gray-500">Tiada bahan dimuatnaik</p>
+</div>
+<button class="editor-only mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors w-full" onclick="openAddModal('aktiviti')">
                         + Tambah Bahan
                     </button>
-                </div>
-            </div>
-        </div>
-    </main>
+</div>
+</div>
+</div>
+</main>
+<!-- Logo Upload Modal -->
 
-    <!-- Logo Upload Modal -->
-    <div id="logoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
-            <h3 class="text-xl font-semibold mb-4">🏫 Tukar Logo Sekolah</h3>
-            <p class="text-gray-600 mb-4">Pilih fail imej untuk logo sekolah anda (PNG, JPG, atau GIF)</p>
-            
-            <!-- File Input -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Fail Logo</label>
-                <input type="file" id="logoFile" accept="image/*" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-            </div>
-            
-            <!-- Preview -->
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Pratonton</label>
-                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto border-2 border-dashed border-gray-300">
-                    <img id="logoPreview" src="" alt="Pratonton Logo" class="w-18 h-18 rounded-full object-cover hidden">
-                    <span id="previewText" class="text-gray-400 text-sm">Tiada imej</span>
-                </div>
-            </div>
-            
-            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4">
-                <p class="text-sm text-yellow-800">
-                    <strong>💡 Petua:</strong> Gunakan imej bersaiz kecil (kurang dari 1MB) untuk prestasi terbaik. Logo akan disimpan dalam pelayar anda.
-                </p>
-            </div>
-            
-            <div class="flex space-x-3">
-                <button onclick="closeLogoModal()" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                    Batal
-                </button>
-                <button onclick="saveLogo()" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                    Simpan Logo
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Share Link Modal -->
-    <div id="shareModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
-            <h3 class="text-xl font-semibold mb-4">📤 Kongsi Link Viewer</h3>
-            <p class="text-gray-600 mb-4">Salin link di bawah untuk dikongsi kepada viewer. Mereka hanya boleh melihat bahan tanpa boleh mengedit.</p>
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Link Viewer</label>
-                <div class="flex">
-                    <input type="text" id="viewerLink" class="flex-1 px-3 py-2 border border-gray-300 rounded-l-lg bg-gray-50" readonly>
-                    <button onclick="copyViewerLink()" class="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
+<!-- Share Link Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50" id="shareModal">
+<div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+<h3 class="text-xl font-semibold mb-4">📤 Kongsi Link Viewer</h3>
+<p class="text-gray-600 mb-4">Salin link di bawah untuk dikongsi kepada viewer. Mereka hanya boleh melihat bahan tanpa boleh mengedit.</p>
+<div class="mb-4">
+<label class="block text-sm font-medium text-gray-700 mb-2">Link Viewer</label>
+<div class="flex">
+<input class="flex-1 px-3 py-2 border border-gray-300 rounded-l-lg bg-gray-50" id="viewerLink" readonly="" type="text"/>
+<button class="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors" onclick="copyViewerLink()">
                         📋 Salin
                     </button>
-                </div>
-            </div>
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-                <p class="text-sm text-blue-800">
-                    <strong>💡 Petua:</strong> Link ini akan membuka laman dalam mod viewer secara automatik. Viewer tidak boleh menambah atau membuang bahan.
+</div>
+</div>
+<div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+<p class="text-sm text-blue-800">
+<strong>💡 Petua:</strong> Link ini akan membuka laman dalam mod viewer secara automatik. Viewer tidak boleh menambah atau membuang bahan.
                 </p>
-            </div>
-            <button onclick="closeShareModal()" class="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+</div>
+<button class="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors" onclick="closeShareModal()">
                 Tutup
             </button>
-        </div>
-    </div>
-
-    <!-- Add Material Modal -->
-    <div id="addModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
-            <h3 class="text-xl font-semibold mb-4" id="modalTitle">Tambah Bahan</h3>
-            <form id="addForm" onsubmit="addMaterial(event)">
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Nama Bahan</label>
-                    <input type="text" id="materialName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Pautan (URL)</label>
-                    <input type="url" id="materialLink" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="https://" required>
-                </div>
-                <div class="flex space-x-3">
-                    <button type="button" onclick="closeModal()" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+</div>
+</div>
+<!-- Add Material Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50" id="addModal">
+<div class="bg-white rounded-xl p-6 w-full max-w-md mx-4">
+<h3 class="text-xl font-semibold mb-4" id="modalTitle">Tambah Bahan</h3>
+<form id="addForm" onsubmit="addMaterial(event)">
+<div class="mb-4">
+<label class="block text-sm font-medium text-gray-700 mb-2">Nama Bahan</label>
+<input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="materialName" required="" type="text"/>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 mb-2">Pautan (URL)</label>
+<input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="materialLink" placeholder="https://" required="" type="url"/>
+</div>
+<div class="flex space-x-3">
+<button class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors" onclick="closeModal()" type="button">
                         Batal
                     </button>
-                    <button type="submit" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+<button class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" type="submit">
                         Tambah
                     </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script>
+</div>
+</form>
+</div>
+</div>
+<script>
         let currentRole = 'editor';
         let currentCategory = '';
         let materials = {
